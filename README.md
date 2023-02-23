@@ -18,12 +18,6 @@ docker exec -it --privileged  nginxserv bash
 apt-get update  
 apt-get install iptables
 
-### open port 22, 80 and 443 in the firewall
-
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT  
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT  
-iptables -A INPUT -p tcp --dport 443 -j ACCEPT  
-iptables-save
 
 ### list the rules
 iptables -L -v  
@@ -46,6 +40,7 @@ see fil: ulogd.conf
 
 iptables -A INPUT -m limit --limit 1/s -p icmp -j NFLOG --nflog-group 1 --nflog-prefix "ICMP:"    
 iptables -A INPUT -p tcp -m tcp --dport 80 --syn -j NFLOG --nflog-group 1 --nflog-prefix "SYN:" 
+iptables-save
 
 ### install ps, less
 
