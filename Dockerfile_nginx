@@ -1,5 +1,6 @@
-FROM nginx_image2
-#FROM nginx
+FROM nginx
+# FROM nginx_image2
+
 
 # COPY ulogd.conf /etc/ulogd.conf
 
