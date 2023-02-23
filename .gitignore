@@ -1,0 +1,11 @@
+build/
+out/
+project/target/*
+
+# IntelliJ IDEA
+.idea/
+# Exclude files created when using gradle auto-import
+*.ipr
+*.iml
+*.iws
+
