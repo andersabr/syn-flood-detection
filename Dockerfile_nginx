@@ -1,7 +1,26 @@
 FROM nginx
-# FROM nginx_image2
+#FROM nginx_image2
+
+RUN apt-get update
+
+RUN apt-get -y install iptables
+
+RUN apt-get -y install ulogd2
+
+RUN apt-get -y install less
+
+RUN rm /etc/ulogd.conf
+
+COPY ulogd.conf /etc/ulogd.conf
 
 
-# COPY ulogd.conf /etc/ulogd.conf
+
+
+
+
+
+
+
+
 
 
