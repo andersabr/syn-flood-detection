@@ -35,9 +35,9 @@ service ulogd2 status
 service ulogd2 start   
 service ulogd2 restart     
 
-### configure ulogd2 for iptables logging
+### configure ulogd2 for iptables logging (in the docker file)
 
-see fil: ulogd.conf
+see fil: ulogd.conf   (/etc/ulogd.conf)
 
 ### configure iptables for logging incoming ICMP packets and SYN packets on port 80
 
@@ -45,7 +45,7 @@ iptables -A INPUT -m limit --limit 1/s -p icmp -j NFLOG --nflog-group 1 --nflog-
 iptables -A INPUT -p tcp -m tcp --dport 80 --syn -j NFLOG --nflog-group 1 --nflog-prefix "SYN:" 
 iptables-save
 
-### install ps, less
+### install ps, less (in the docker file)  
 
 apt-get update   
 apt-get install procps   

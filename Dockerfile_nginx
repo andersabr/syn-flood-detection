@@ -9,6 +9,8 @@ RUN apt-get -y install ulogd2
 
 RUN apt-get -y install less
 
+RUN apt-get -y install procps
+
 RUN rm /etc/ulogd.conf
 
 COPY ulogd.conf /etc/ulogd.conf
