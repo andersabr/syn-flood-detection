@@ -13,7 +13,7 @@ docker exec -it --privileged gccsynfl bash
 docker exec -it --privileged  nginxserv bash
 
 
-### install iptables firewall
+### install iptables firewall (in the docker file)
 
 apt-get update  
 apt-get install iptables
@@ -24,10 +24,13 @@ iptables -L -v
 iptables -S  
 
 
-### for ulogd logging 
+### install ulogd2 for logging (in the docker file) 
 
 apt-get update  
 apt-get install ulogd2  
+
+### start ulogd2 etc. 
+
 service ulogd2 status   
 service ulogd2 start   
 service ulogd2 restart     
@@ -72,3 +75,4 @@ tcpdump --interface eth0
   
   
   
+
